@@ -1,0 +1,30 @@
+#!/bin/gnuplot -persist
+reset
+NO_ANIMATION = 1
+
+set xlabel "размер матрицы, шт * шт"
+set ylabel "Время, мкс"
+set grid
+
+set key left box
+set size 1,1
+
+# set terminal svg size 1920, 1080
+# set output '../pictures/graph1.svg'
+# set size ratio 0.5625
+
+plot '../dataset/prep_data/transpose_no_O0.txt'         title 'transpose no O0'     w lp lt 1  lc "red"        lw 1 dt 1
+replot '../dataset/prep_data/transpose_no_O1.txt'       title 'transpose no O1'     w lp lt 2  lc "red"        lw 1 dt 1
+replot '../dataset/prep_data/transpose_no_O2.txt'       title 'transpose no O2'     w lp lt 3  lc "red"        lw 1 dt 1
+replot '../dataset/prep_data/transpose_no_O3.txt'       title 'transpose no O3'     w lp lt 4  lc "red"        lw 1 dt 1
+replot '../dataset/prep_data/transpose_no_Os.txt'       title 'transpose no Os'     w lp lt 5  lc "red"        lw 1 dt 1
+replot '../dataset/prep_data/transpose_first_O0.txt'    title 'transpose first O0'  w lp lt 6  lc "dark-green" lw 1 dt 3
+replot '../dataset/prep_data/transpose_first_O1.txt'    title 'transpose first O1'  w lp lt 7  lc "dark-green" lw 1 dt 3
+replot '../dataset/prep_data/transpose_first_O2.txt'    title 'transpose first O2'  w lp lt 8  lc "dark-green" lw 1 dt 3
+replot '../dataset/prep_data/transpose_first_O3.txt'    title 'transpose first O3'  w lp lt 9  lc "dark-green" lw 1 dt 3 
+replot '../dataset/prep_data/transpose_first_Os.txt'    title 'transpose first Os'  w lp lt 10 lc "dark-green" lw 1 dt 3
+replot '../dataset/prep_data/transpose_second_O0.txt'   title 'transpose second O0' w lp lt 11 lc "blue"       lw 1 dt 2
+replot '../dataset/prep_data/transpose_second_O1.txt'   title 'transpose second O1' w lp lt 12 lc "blue"       lw 1 dt 2
+replot '../dataset/prep_data/transpose_second_O2.txt'   title 'transpose second O2' w lp lt 13 lc "blue"       lw 1 dt 2
+replot '../dataset/prep_data/transpose_second_O3.txt'   title 'transpose second O3' w lp lt 14 lc "blue"       lw 1 dt 2
+replot '../dataset/prep_data/transpose_second_Os.txt'   title 'transpose second Os' w lp lt 15 lc "blue"       lw 1 dt 2
